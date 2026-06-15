@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do App</title>
+</head>
+
+<body>
+
+    <h2>To-Do List</h2>
+
+    <input type="text" id="task" placeholder="Enter a task">
+    <button onclick="addTask()">Add</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        function addTask() {
+
+            let text = document.getElementById("task").value;
+
+            if(text == ""){
+                alert("Enter a task");
+                return;
+            }
+
+            let p = document.createElement("p");
+
+            p.innerHTML = text + " <button onclick='this.parentElement.remove()'>Delete</button>";
+
+            document.getElementById("output").appendChild(p);
+
+            document.getElementById("task").value = "";
+
+        }
+
+    </script>
+
+</body>
+</html>
